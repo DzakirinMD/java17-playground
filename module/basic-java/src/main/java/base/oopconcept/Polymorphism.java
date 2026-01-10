@@ -1,6 +1,7 @@
 package base.oopconcept;
 
 class Animal {
+    public String animalType = "Mammal";
     public void animalSound() {
         System.out.println("The animal makes a sound");
     }
@@ -8,6 +9,7 @@ class Animal {
 
 class Pig extends Animal {
     public void animalSound() {
+        super.animalSound();
         System.out.println("The pig says: wee wee");
     }
 }
@@ -44,5 +46,6 @@ public class Polymorphism {
         pig.animalSound();
         dog.animalSound();
 
+        System.out.println(dog.animalType);
     }
 }
