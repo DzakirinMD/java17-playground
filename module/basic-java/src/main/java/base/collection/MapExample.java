@@ -1,9 +1,6 @@
 package base.collection;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Java Map is an object that maps keys to values. A map cannot contain duplicate keys: Each key can map to at most one value.
@@ -29,11 +26,27 @@ public class MapExample {
         // To access HashMap
         System.out.println("To access HashMap, use get() method and refer to its key eg: \ncapitalCities.get(\"USA\") = " + capitalCities.get("USA"));
 
-        //To print out all the element in the HashMap
+        // To print out all the element in the HashMap
         System.out.println("To print out all the element in the HashMap ");
-        for (String i : capitalCities.keySet()) {
-            System.out.println("key: " + i + " value: " + capitalCities.get(i));
-        }
+        capitalCities.forEach((key, value) ->
+            System.out.println("key: " + key + " value: " + value)
+        );
+
+//        for (String i : capitalCities.keySet()) {
+//            System.out.println("key: " + i + " value: " + capitalCities.get(i));
+//        }
+
+        // To find unique element in hashmap. We put the map into set. so everthing become unique
+        Map<Integer, String> map = new HashMap<>();
+        map.put(1, "Java");
+        map.put(2, "Python");
+        map.put(3, "Java"); // Duplicate value
+        map.put(4, "C++");
+
+        // Get all values, then filter duplicates using a HashSet
+        Set<String> uniqueValues = new HashSet<>(map.values());
+
+        System.out.println("Unique Values in HashMap: " + uniqueValues);
 
         // Remove an Item in HashMap
         System.out.println("To remove an item  in HashMap, use remove() method and refer to its key eg: \ncapitalCities.remove(\"USA\") = " + capitalCities.remove("USA"));

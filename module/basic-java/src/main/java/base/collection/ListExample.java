@@ -27,8 +27,10 @@ public class ListExample {
 
         // To add into ArrayList
         cars.add("Volvo");
+        cars.add("Volvo");
         cars.add("BMW");
         cars.add("Ford");
+        cars.add("Mazda");
         cars.add("Mazda");
         System.out.println( " The cars ArrayList consist of : " + cars);
 
@@ -67,6 +69,12 @@ public class ListExample {
         for (String i : cars){
             System.out.println(" " + i);
         }
+
+        // To find unique element in arraylist
+        var uniqueElement = cars.stream()
+                .distinct()
+                .toList();
+        System.out.println(" The duplicated element in cars ArrayList : " + uniqueElement);
 
         //To remove all the elements in the ArrayList
         System.out.println("To remove all the elements in the ArrayList, use the clear() method: ");
